@@ -150,6 +150,8 @@ namespace AraçSipariş
             cmbMotorTipi.Text = secili.SubItems[5].Text;
             btnRenk.BackColor = secili.SubItems[6].BackColor;
             dtpYil.Value =Convert.ToDateTime(string.Format("01.01.{0}",secili.SubItems[7].Text));
+
+            //burada bir hata var 
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -162,6 +164,7 @@ namespace AraçSipariş
             secili.SubItems[5].Text = cmbMotorTipi.Text;
             secili.SubItems[6].BackColor = btnRenk.BackColor;
             secili.SubItems[7].Text = dtpYil.Text;
+
         }
     }
 }
