@@ -149,7 +149,8 @@ namespace AraçSipariş
             cmbVitesTipi.Text = secili.SubItems[4].Text;
             cmbMotorTipi.Text = secili.SubItems[5].Text;
             btnRenk.BackColor = secili.SubItems[6].BackColor;
-            dtpYil.Value =Convert.ToDateTime(string.Format("01.01.{0}",secili.SubItems[7].Text));
+            string test = string.Format("01.01.{0}", secili.SubItems[7].Text);
+            dtpYil.Value =Convert.ToDateTime(test);
 
             //burada bir hata var 
         }
