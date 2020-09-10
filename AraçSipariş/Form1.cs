@@ -149,21 +149,28 @@ namespace AraçSipariş
             cmbVitesTipi.Text = secili.SubItems[4].Text;
             cmbMotorTipi.Text = secili.SubItems[5].Text;
             btnRenk.BackColor = secili.SubItems[6].BackColor;
-            dtpYil.Value =Convert.ToDateTime(string.Format("01.01.{0}",secili.SubItems[7].Text));
+            dtpYil.Value =Convert.ToDateTime(secili.SubItems[7].Text);
 
             //burada bir hata var 
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            secili.SubItems[0].Text = cmbMarka.Text;
-            secili.SubItems[1].Text = cmbModel.Text;
-            secili.SubItems[2].Text = cmbYakıtTipi.Text;
-            secili.SubItems[3].Text = cmbKasaTipi.Text;
-            secili.SubItems[4].Text = cmbVitesTipi.Text;
-            secili.SubItems[5].Text = cmbMotorTipi.Text;
-            secili.SubItems[6].BackColor = btnRenk.BackColor;
-            secili.SubItems[7].Text = dtpYil.Text;
+            if (secili != null)
+            {
+                secili.SubItems[0].Text = cmbMarka.Text;
+                secili.SubItems[1].Text = cmbModel.Text;
+                secili.SubItems[2].Text = cmbYakıtTipi.Text;
+                secili.SubItems[3].Text = cmbKasaTipi.Text;
+                secili.SubItems[4].Text = cmbVitesTipi.Text;
+                secili.SubItems[5].Text = cmbMotorTipi.Text;
+                secili.SubItems[6].BackColor = btnRenk.BackColor;
+                secili.SubItems[7].Text = dtpYil.Text; 
+            }
+            else
+            {
+                MessageBox.Show("Lütfen bir araç ekleyiniz!");
+            }
 
         }
     }
